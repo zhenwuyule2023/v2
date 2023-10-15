@@ -1,0 +1,114 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": 400,
+        "height": 400,
+        "title": "Anxiety disorders prevalence, males vs. females, 2019",
+        "data": {
+            "url": "https://raw.githubusercontent.com/zhenwuyule2023/3179/main/adcakjadbcljbqac.csv"
+        },
+        "params": [
+           
+            {
+            "name": "Continent_selection",
+            "bind": {
+            "input": "select",
+            "options": [
+            null,
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+            ],
+            "labels":[
+            "Show All",
+            "North America",
+            "South America",
+            "Europe",
+            "Africa",
+            "Asia",
+            "Oceania"
+            ],
+            "name": "Continent Selection: "
+            }
+            },
+            {
+                "name": "Population_selection",
+                "bind": {
+                  "input": "range",
+                  "min": 10000,
+                  "max": 100000000,
+                  "step": 1000,
+                  "name": "Minimum Population: "
+                }
+              }
+            ],
+            "transform": [
+            
+            {"filter": "Continent_selection == null || datum.Continent == Continent_selection"},
+            {"filter": "datum['Population (historical estimates)'] >= Population_selection"}
+            ],
+        "mark": "circle",
+    
+        "encoding": {
+        "x": {
+        "field": "Female",
+        "type": "quantitative",
+        "title": "Rate of Female",
+        "axis": {"tickCount": 7},
+        "scale": {"type": "log","base":1.3, "domain": [1.3,10.6]}
+        },
+        "y": {
+        "field": "Males",
+        "type": "quantitative",
+        "title": "Rate of Male",
+        "axis": {"tickCount": 6},
+        "scale": {"type": "log","base":1.3, "domain": [1.3,8]}
+        },
+        "color": {
+        "field": "Continent",
+        "type": "nominal",
+        "scale": {
+        "domain": [
+        "North America",
+        "South America",
+        "Europe",
+        "Africa",
+        "Asia",
+        "Oceania"
+        ],
+        "range": [
+        "#e41a1c",
+        "#984ea3",
+        "#ff7f00",
+        "#a6cee3",
+        "#377eb8",
+        "#a65628"
+        ]
+        }
+        },
+        "opacity": {
+        
+        "value": 0.6
+        },
+        "size": {
+        "field": "Population (historical estimates)",
+        "type": "quantitative",
+        "scale": {
+        "type": "threshold",
+        "domain": [100000,1000000, 10000000, 50000000],
+        "range": [30, 60, 180, 300, 1000]
+        },
+        "legend": {"format": ".1s"}
+        },
+        "tooltip": [
+        {"field": "Entity", "type": "nominal"},
+        {"field": "Female", "type": "quantitative", "format": ","},
+        {"field": "Males", "type": "quantitative", "format": ","},
+        {"field": "Population (historical estimates)", "type": "quantitative", "format": ","}]
+    
+    
+    
+    
+        }}

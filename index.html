@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g header">
+      <div class="pure-u-1-1">
+        <h1>Global Perspectives on Mental Health</h1>
+        <p>Mental health is an essential part of peoples lives and society. Poor mental health affects our well-being,
+          our ability to work, and our relationships with friends, family, and community.</p>
+        <p>Mental health conditions are not uncommon. Hundreds of millions suffer from them yearly, and many more do
+          over their lifetimes.
+          It’s estimated that 1 in 3 women and 1 in 5 men will experience major depression in their lives. Other
+          conditions,
+          such as schizophrenia and bipolar disorder, are less common but still have a large impact on people’s lives.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- pure grid group -->
+    
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+          <div class="flex-container">
+              <div class="text-container">
+                  <h2>Burden of Disease from Each Category of Mental Illness (2019)</h2>
+                  <p>The charts provide insights into the distribution of mental illness burden.
+                  The pie chart showcases the comparative impact of each type, while the bar graph presents the absolute DALYs
+                  per 100,000 people for each illness type.
+                  DALY, or Disability-Adjusted Life Year, represents the total years of healthy life lost due to a disease.
+                  
+                  </p>
+              </div>
+              <div class="image-container">
+                  <img src="health.jpg" alt="Descriptive image alt text">
+              </div>
+          </div>
+          <div id="vis1" class="vis-container"></div>
+      </div>
+  </div>
+    
+
+  <!-- Scatter Plot -->
+  <div class="pure-g">
+    <div class="pure-u-1-3">
+      <div class="description description-left">
+      <h2>Anxiety Disorders Prevalence: Males vs. Females (2019)</h2>
+      <p>This scatter plot delineates the prevalence of anxiety disorders between males and females across various
+        continents. By offering a continent-specific filter, users can focus on regions of their interest. The plot's
+        size represents the population, and its logarithmic scale ensures data accuracy.</p>
+      </div>
+    </div>
+    <div class="pure-u-1-3">
+      <div id="vis3" class="vis-container"></div>
+    </div>
+    </div>
+  
+
+  <!-- Geo Chart -->
+  <div class="pure-g">
+    <div class="pure-u-1-4">
+      <div class="description description-left">
+      <h2>Global Anxiety Disorders Prevalence (2019)</h2>
+      <p>This geographical chart paints a global view of anxiety disorder prevalence. Darker shades indicate higher
+        prevalence rates. With its detailed granularity at a country level, the visualization offers an understanding of
+        the geographical distribution and impact of anxiety disorders.</p>
+      </div>
+    </div>
+      
+      <div class="pure-u-1-4">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+  </div>
+
+
+
+  <!-- end pure grid group -->
+
+  <div class="pure-g">
+    <div class="pure-u-1-1 small-font">
+      <p>This visualisation is created by <a href="https://zhenwuyule2023.github.io/A1/" target="_blank">Sendi Bai
+        </a>. The datasource is <a href="https://ourworldindata.org/mental-health#research-writing" target=" _blank">our
+          world in data</href>.</p>
+    </div>
+  </div>
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "js/bar.chart.json";
+    var specVis2 = "js/map.json";
+    var specVis3 = "js/bubble.chart.json";
+
+
+
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+    vegaEmbed('#vis2', specVis2, { "actions": false });
+    vegaEmbed('#vis3', specVis3, { "actions": false });
+
+
+
+
+
+  </script>
+
+
+
+
+
+</body>

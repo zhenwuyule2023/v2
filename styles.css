@@ -1,0 +1,69 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;  
+}
+
+body {
+    /* Modern gradient background */
+    background: linear-gradient(to bottom right, #34e7e4, #0f3443);
+    font-family: 'Open Sans', sans-serif;   
+}
+
+.page {
+    
+    width: 1150px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 35px;
+      
+}
+.description h2,
+h1 {
+  margin-top: 0px;
+}
+h1, h2 {
+    border-bottom: 2px solid #b3c4ed;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.vis-container {
+    width: 100%;
+    margin: 100px 0;  /* 添加顶部和底部的边距 */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+.image-container img {
+    width: 550%;
+    height: 40vh;
+    font-weight: 4000;
+}
+
+
+.pure-g {
+    margin-bottom: 50px; /* Spacing between the sections */
+    padding: 20px;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;  /* Rounded corners */
+    text-align: left;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;    
+}
+
+
+.pure-g:hover  {
+    transform: scale(1.02);  /* Slight zoom on hover */
+}

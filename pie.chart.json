@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Burden of disease from each category of mental illness, World, 2019"},
+    
+    "width": 200,
+    "height": 100,
+    "data": {
+        "url": "https://raw.githubusercontent.com/zhenwuyule2023/3179/main/Sheet%201_Full%20Data_data%20(2).csv"},
+        "transform": [
+    {
+      "aggregate": [{
+       "op": "sum",
+       "field": "Values",
+       "as": "Estimated number of DALYs per 100,000 people "
+      }],
+      "groupby": ["Type"]
+    }
+  ],
+    
+    "mark": {"type":"arc", "innerRadius": 80},
+    "encoding": {
+    "theta": { "field": "Estimated number of DALYs per 100,000 people ", "type": "quantitative" },
+    
+    "color": { "field": "Type", "type": "nominal"},
+    "tooltip": [
+        
+        {"field": "Estimated number of DALYs per 100,000 people ", "type": "quantitative"}
+      ]
+    }
+    
+    
+    }  
